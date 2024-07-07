@@ -1,0 +1,83 @@
+{% extends "index.html" %}
+
+{% block mainContent %}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-8">Light Bulb Calculator</h1>
+        <p class="lead">You can try out our awesome Calculator</p>
+    </div>
+</div>
+
+<form class="container" action="{{ url_for('calculate') }}" method="post">
+    <div class="row">
+        <div class="col-lg-3 col-md-3">
+            <select id="selectCountry" class="form-control" name="Country" required>
+                <option value="" selected>Please choose a country</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="United States">United States</option>
+                <option value="Canada">Canada</option>
+            </select>
+        </div>
+    
+        <div class="col-lg-3 col-md-3">
+            <select id="selectBulb" class="form-control" name="Bulb" required>
+                <option value="" selected>Please choose a type of bulb</option>
+                <option value="LED">LED</option>
+                <option value="CFL">CFL</option>
+            </select>
+        </div>
+
+        <div class="col-lg-3 col-md-3">
+            <input type="number" name="applianceNumber" class="form-control" placeholder="Number of appliances used" required>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-lg-3 col-md-3">
+            <input type="number" name="timeUsed" class="form-control" placeholder="Hours used per day" required>
+        </div>
+
+        <div class="col-lg-3 col-md-3">
+            <input type="number" name="power" class="form-control" placeholder="Input power of appliance (W)" required>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-lg-3 col-md-3">
+            <input type="submit" value="Calculate" class="btn btn-primary"/>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="alert {{ color }}">
+                {{ note }}
+            </div>
+        </div>
+    </div>
+
+    {% if calculated %}
+    <div class="row mt-3">
+        <div class="col-lg-12">
+            <div class="text-center">
+                {% if Bulb == "LED" %}
+                <input type="text" class="form-control" placeholder="Cost of energy consumption per month is around RM{{ result1 }} to RM{{ result2 }}" readonly/>
+                <input type="text" class="form-control" placeholder="Your carbon emission per month is around {{ cresult1 }} kg of CO2 each month" readonly/>
+                <input type="text" class="form-control" placeholder="Consider using natural light whenever possible and turn off lights in unoccupied rooms." readonly/>
+                {% elif Bulb == "CFL" %}
+                <input type="text" class="form-control" placeholder="Cost of energy consumption per month is around RM{{ result3 }} to RM{{ result4 }}" readonly/>
+                <input type="text" class="form-control" placeholder="You could save around RM{{ result1 }} to RM{{ result2 }} by switching to LED" readonly/>
+                <input type="text" class="form-control" placeholder="Your carbon emission per month is around {{ cresult2 }} kg of CO2 each month" readonly/>
+                <input type="text" class="form-control" placeholder="You could reduce your carbon emission by {{ cresult1 }} kg of CO2 each month by switching to LED Bulbs." readonly/>
+                <input type="text" class="form-control" placeholder="Consider using natural light whenever possible and turn off lights in unoccupied rooms." readonly/>
+                <input type="text" class="form-control" placeholder="Consider replacing CFL bulbs with energy-efficient LED bulbs, which use up to 75% less energy and last much longer." readonly/>
+                {% else %}
+                <input type="text" class="form-control" placeholder="Please select a bulb type" readonly/>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</form>
+
+{% endblock %}

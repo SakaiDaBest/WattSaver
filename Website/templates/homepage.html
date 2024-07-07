@@ -1,0 +1,62 @@
+{% extends "test.html" %}
+
+{% block mainContent %}
+<div class="container" style="margin-top:30px">
+    <div class="row">
+      <div class="col-sm-4">
+        <h2>About WattSaver</h2>
+        <h5>Photo of me:</h5>
+        <div>
+            <img src="/Website/templates/img/sadearth.jpg" alt="sadearth" width="500" height="600">
+        </div>
+        <p>WattSaver aims to give users an idea about their current electrical usage. Through this, it hopes to encourage consumers to be more proactive in saving electricity, as electricity is one of the major contributors to pollution on our planet Earth. We provide calculators that are able to estimate your current electrical usage by only taking the most minimal amount of information to give you a general idea on what to do with your current electrical usage. We highly encourage you to use one of these calculators right now!</p>
+        <h3>Similar Calculators</h3>
+        <p>A few calculators you can try other than ours</p>
+        <ul class="nav nav-pills flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.cencepower.com/calculators/kwh-to-co2-calculator">Cence Power</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.omnicalculator.com/everyday-life/electricity-cost">Omni Calculator</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.mgtc.gov.my/lcos-personal-calculator/">Personal Carbon Footprint Calculator</a>
+          </li>
+        </ul>
+        <hr class="d-sm-none">
+      </div>
+      <div class="col-sm-8">
+        <h2>Try our calculators now!</h2>
+        <h5>Electrical usage and carbon footprint calculator right at your fingertips!</h5>
+        <div >
+            <div class="container p-5 my-3 bg-dark text-white">
+                <h1 class="display-8 text-center">
+                    <a class="alert alert-primary" href="{{url_for('Bulbs')}}">Use Simple Calculator</a>
+                    <p class="lead text-center alert alert-primary mt-5">This simple calculator can add, subtract, multiply and divide two numbers.</p>
+                    
+                </h1>
+                
+        
+            </div>
+        </div>
+        <p><b>A calculator to save you from tedious calculations!</b></p>
+        <p>This calculator encompasses all types of formulas and constants required for converting your daily activities' worth of carbon emissions and electrical usages to figures for you to look at. Having hard numbers of your carbon footprint and electrical usage is a good place to start when deciding on how to reduce them both respectively!</p>
+        <br>
+        <h2>Our Project's Inspiration</h2>
+        <h5>To understand where we started from.</h5>
+        <div class="fakeimg">Fake Image</div>
+        <p><b>It all started when...</b></p>
+        <p>..a student decided to open his Physics textbook, and he saw a table on a comparison of electrical usages between CFL and LED light bulbs. Suddenly, a flash of inspiration went through his mind, giving him a sudden burst of motivation to code up an application that can help consumers from all around the world!</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="jumbotron text-center" style="margin-bottom:0">
+    <p>Copyright of group 1 of Physics Project. No stealing!!! (Especially you Tiek Sem!)</p>
+  </div>
+  
+  </body>
+  </html>
+
+  {% endblock %}
+  

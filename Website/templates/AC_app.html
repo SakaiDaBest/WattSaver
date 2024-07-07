@@ -1,0 +1,88 @@
+{% extends "index.html" %}
+
+{% block mainContent %}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-8">AC Appliance</h1>
+        <p class="lead">You can try out our awesome advanced Calculator</p>
+    </div>
+</div>
+
+<form class="container" action="{{url_for('calculate_AC')}}" method="post">
+    <div class="row">
+        <div class="col-lg-3 col-md-3">
+            <select id="selectCountry" class="form-control" name="Country" required>
+                <option value="" selected>Please choose a country</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="United States">United States</option>
+                <option value="Canada">Canada</option>
+            </select>
+        </div>
+
+        <div class="col-lg-3 col-md-3">
+            <select id="selectStar" class="form-control" name="Star" required>
+                <option value="" selected>Star Rating</option>
+                <option value="None">None</option>
+                <option value="1 ⭐">1 ⭐</option>
+                <option value="2 ⭐">2 ⭐</option>
+                <option value="3 ⭐">3 ⭐</option>
+                <option value="4 ⭐">4 ⭐</option>
+                <option value="5 ⭐">5 ⭐</option>
+            </select>
+        </div>
+
+        <div class="col-lg-3 col-md-3">
+            <input type="number" name="applianceNumber" class="form-control" placeholder="Number of appliances used" required>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-lg-3 col-md-3">
+            <input type="number" name="timeUsed" class="form-control" placeholder="Hours used per day" required>
+        </div>
+
+        <div class="col-lg-3 col-md-3">
+            <input type="number" name="PF" class="form-control" placeholder="Power Factor" required>
+        </div>
+
+        <div class="col-lg-3 col-md-3">
+            <input type="number" name="power" class="form-control" placeholder="Input power of appliance (W)" required>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-lg-3 col-md-3">
+            <input type="submit" value="Calculate" class="btn btn-primary"/>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="alert {{ color }}">
+                {{ note }}
+            </div>
+        </div>
+    </div>
+
+    {% if calculated %}
+    <div class="row mt-3">
+        <div class="col-lg-12">
+            <div class="text-center">
+                {% if Star != "None" and Star != "5 ⭐" %}
+                <input type="text" class="form-control" placeholder="Cost of energy consumption per month is around RM{{ result1 }} to RM{{ result2 }}" readonly/>
+                <input type="text" class="form-control" placeholder="You could reduce your energy cost by RM{{ aresult1 }} to RM{{ aresult2 }}" readonly/>
+                <input type="text" class="form-control" placeholder="Your carbon emission per month is around {{ cresult1 }} kg of CO2 each month" readonly/>
+                <input type="text" class="form-control" placeholder="You could reduce your carbon emission by {{ caresult1 }}kg to {{ caresult2 }}kg by changing to a device 5⭐ energy efficiency." readonly/>
+                <input type="text" class="form-control" placeholder="Consider purchasing more energy efficient appliances that consume less energy and plug out unused appliances" readonly/>
+                {% else %}
+                <input type="text" class="form-control" placeholder="Cost of energy consumption per month is around RM{{ result1 }} to RM{{ result2 }}" readonly/>
+                <input type="text" class="form-control" placeholder="You could reduce your energy cost by RM{{ aresult1 }} to RM{{ aresult2 }}" readonly/>
+                <input type="text" class="form-control" placeholder="Remember to plug out unused appliances to reduce consumption." readonly/>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</form>
+
+{% endblock %}
