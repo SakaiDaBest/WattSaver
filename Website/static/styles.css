@@ -1,0 +1,263 @@
+body {
+  background-image: url('/static/img/facilities.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.cover-container {
+  width: 100%; /* Ensure full width */
+}
+
+main {
+  margin-top: 9rem; /* Adjust as needed */
+}
+
+.btn-secondary {
+  background-color: #6a0dad;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.btn-secondary:hover {
+  background-color: #4b0082;
+}
+
+.masthead-brand img {
+  max-width: 300px;
+  height: auto;
+}
+
+.nav {
+  margin-left: auto;
+}
+
+.nav-link {
+  color: rgb(255, 255, 255) !important;
+  font-size: 2rem;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.nav-link.active {
+  color: rgb(138, 43, 226) !important;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #9370db !important;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.nav-pills {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 3rem;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.nav-link2 {
+  display: block;
+  padding: .5rem 1rem;
+}
+
+.cover-heading {
+  font-family: Helvetica, Arial, sans-serif;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 2px rgba(138, 43, 226, 0.7);
+  font-weight: bold;
+}
+
+.card {
+  width: 100%; /* Use full width */
+  max-width: 1000px; /* Max width */
+  height: 350px; /* Adjust height as needed */
+  display: flex;
+  flex-direction: column;
+  margin: auto; /* Centering */
+  opacity: 0; /* Initially hide the cards */
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: black; /* Ensure pricing-card-title text is black */
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+#about-section .container-fluid {
+  opacity: 0; /* Initially hide the container */
+}
+
+#about-section.slide-in .container-fluid {
+  animation: slideInLeft 1s forwards; /* Slide in from left */
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.card {
+  opacity: 0; /* Initially hide the cards */
+}
+
+.card.slide-in {
+  animation: slideInRight 1s forwards; /* Slide in from right */
+}
+
+.card.slide-in-left {
+  animation: slideInLeft 1s forwards; /* Slide in from left */
+}
+
+.card.slide-in-right {
+  animation: slideInRight 1s forwards; /* Slide in from right */
+}
+
+.full-width-section {
+  width: 100%;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8); /* Optional background color */
+  margin-top: 30rem; /* Adjust this value as needed for the desired gap */
+}
+
+.calculators-title {
+  color: white; /* Sets the color of the title to white */
+  font-weight: bold;
+}
+
+.calculators-description {
+  color: white; /* Sets the color of the description to white */
+}
+
+.calculator-links p {
+  margin-top: 2.5rem;
+  margin-right: 8.5rem;
+  color: white;
+  font-size: 1.8rem;
+}
+
+.calculator-links .nav-link2 {
+  color: rgb(122, 124, 238);
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.calculator-links .nav-link2:hover {
+  color: #ccc;
+  text-decoration: underline;
+}
+
+.calculators-title1 {
+  color: rgb(155, 113, 231);
+  text-align: center; /* Align text to the left */
+  margin-left: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.calculators-description1 {
+  color: rgb(197, 179, 231);
+  text-align: center; /* Align text to the left */
+  margin-left: 1rem;
+  margin-bottom: 7rem;
+  font-size: 1.8rem;
+}
+
+.footer {
+  color: white;
+  padding: 1rem 0; /* Adjust footer padding */
+}
+
+.footer img {
+  margin-bottom: 0.5rem; /* Reduce space below the image */
+  margin-right: 0rem; /* Reduce space to the right of the image */
+}
+
+.footer small {
+  margin-bottom: 0; /* Remove margin below small text */
+}
+
+/* Style for the section titles */
+.about-section-title {
+  color: #f8f9fa; /* Choose your desired color for the section titles */
+  text-align: center; /* Align text to the left */
+  margin-left: 1rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+
+/* Style for the section paragraphs */
+.about-section-text {
+  color: #e0e0e0; /* Choose your desired color for the section text */
+  text-align: center; /* Align text to the left */
+  margin-left: 0rem;
+  font-size: 2.0rem;
+  margin-bottom: 30rem;
+}
+
+.card-header.light-bulbs-color h4,
+.card-header.dc-appliance-color h4,
+.card-header.ac-appliance-color h4 {
+  font-weight: bold; /* Make the text bold */
+}
+
+.question-marks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Adjust as needed */
+  margin-bottom: 10px;
+
+}
+
+.question-mark {
+  width: 50px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+  animation: translateOscillate 2s infinite ease-in-out;
+  margin: 0 10px; /* Adjust spacing as needed */
+
+}
+
+@keyframes translateOscillate {
+  0%, 100% {
+    transform: translateY(0) rotate(-15deg); /* Start and end position */
+  }
+
+  25% {
+    transform: translateY(-20px)
+  }
+  50% {
+    transform: translateY(0px) rotate(15deg); /* Midpoint position */
+  }
+
+  75%{
+    transform: translateY(-20px)
+  }
+}
+make everything stay in place after it slides in
+
