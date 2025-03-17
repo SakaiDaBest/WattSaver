@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="The Derpiest Quartet">
+    <title>WattSaver</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/cover/">
+    <link href="/static/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/styles.css" rel="stylesheet">
+
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner d-flex align-items-center">
+          <a href="#" class="masthead-brand">
+            <img src="/static/img/wattsaver.png" alt="WattSaver" class="masthead-image">
+          </a>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="{{url_for('main')}}">Home</a>
+            <a class="nav-link" id="about-link" href="#">About Us</a>
+            <a class="nav-link" href="#"></a>
+            <a class="nav-link active" href="{{url_for('Facts')}}">Additional Info</a>
+          </nav>
+        </div>
+      </header>
+
+      <main role="main" class="inner cover">
+        <div class="question-marks">
+          <img src="/static/img/question-mark.png" style="width: 100px; margin-right: 300px; " alt="Question Mark" class="question-mark">
+          <img src="/static/img/question-mark.png" style="width: 100px; margin-right: 300px; " alt="Question Mark" class="question-mark">
+          <img src="/static/img/question-mark.png" style="width: 100px; " alt="Question Mark" class="question-mark">
+        </div>
+        <h1 class="cover-heading">Ever wonder what's your current impact on the earth's environment?</h1>
+        <p class="lead" style="color: rgb(0, 0, 0); font-weight: bold;">Our calculators can help to estimate your current carbon emission rate and electricity usages!</p>
+        <p class="lead">
+          <a href="#calculators-section" class="btn btn-lg btn-secondary">Try our calculators now!</a>
+        </p>
+
+      </main>
+
+      <!-- About Section-->
+      <div id="about-section" class="full-width-section" style="background: rgba(0, 0, 0, 0.8);">
+        <div class="pricing-header">
+          <h1 class="display-4 calculators-title1">Well...... We have!</h1>
+          <p class="lead calculators-description1">Learn more about our inspiration and how we strive to make a difference.</p>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="display-3 about-section-title">About WattSaver</h2>
+              <p class="about-section-text">WattSaver aims to give users an idea about their current electrical usage. Through this, it hopes to encourage consumers to be more proactive in saving electricity, as electricity is one of the major contributors to pollution on our planet Earth. We provide calculators that are able to estimate your current electrical usage by only taking the most minimal amount of information to give you a general idea on what to do with your current electrical usage. We highly encourage you to use one of these calculators right now!</p>
+            </div>
+            <div class="col-md-12">
+              <h2 class="display-3 about-section-title">Our Inspiration</h2>
+              <p class="about-section-text">Throughout our modern times, especially during this era, it is no secret that electrical appliances have become a necessary part of our lives. One of our group members, decided one day to flip open his physics textbook, when he saw a table comparing the differences between CFL and LED light bulbs. Armed with this new information, he decided to construct an online calculator, so that the public can use it and determine the impact of their daily lives.</p>
+            </div>
+            <div class="col-md-12">
+              <h2 class="display-3 about-section-title">About Me</h2>
+              <p class="about-section-text">Hi, I am Wong Wei Jun, An aspiring programmer working on all sorts of coding projects.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Calculators Section -->
+      <div id="calculators-section" class="full-width-section">
+        <div class="pricing-header">
+          <h1 class="display-4 calculators-title">Our Calculators</h1>
+          <p class="lead calculators-description">To account for different users, we have added a few calculators made for specific appliances.</p>
+        </div>
+
+        <div class="container">
+          <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 shadow-sm">
+              <div class="card-header light-bulbs-color">
+                <h4 class="my-0 font-weight-bold">Light Bulbs calculator</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title light-bulbs-title">For all types of electrical light bulbs</h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Power rating needed</li>
+                  <li>CFL/LED</li>
+                  <li>Overview</li>
+                  <li>Recommendations</li>
+                </ul>
+                <a href="{{url_for('Bulbs')}}" class="btn btn-lg btn-block" style="background-color: purple; border-color: purple; color: white;" role="button">Try now!</a>
+              </div>
+            </div>
+
+            <div class="card mb-4 shadow-sm">
+              <div class="card-header dc-appliance-color">
+                <h4 class="my-0 font-weight-bold">DC appliance calculator</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title dc-appliance-title">For appliances that use Direct Current</h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Star rating system</li>
+                  <li>Power of appliance indeed</li>
+                  <li>Overview</li>
+                  <li>Recommendations</li>
+                </ul>
+                <a href="{{url_for('DC')}}" class="btn btn-lg btn-block" style="background-color: purple; border-color: purple; color: white;" role="button">Try now!</a>
+              </div>
+            </div>
+
+            <div class="card mb-4 shadow-sm">
+              <div class="card-header ac-appliance-color">
+                <h4 class="my-0 font-weight-bold">AC appliance calculator</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">For appliances that use Alternating Current</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Star rating system</li>
+                  <li>Power factor</li>
+                  <li>Overview</li>
+                  <li>Recommendations</li>
+                </ul>
+                <a href="{{url_for('AC')}}" class="btn btn-lg btn-block" style="background-color: purple; border-color: purple; color: white;" role="button">Try now!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="pt-5 my-md-5 pt-md-5 border-top footer">
+          <div class="row">
+            <div class="col-md">
+              <img class="mb-2" src="/static/img/wattsaver.png" alt="" width="300px">
+              <small class="d-block mb-3 text-muted">&copy; 2024</small>
+            </div>
+            <div class="col-sm-6 calculator-links">
+              <p>A few calculators you can try other than ours</p>
+              <ul class="nav nav-pills flex-column flex-md-row">
+                <li class="nav-item">
+                  <a class="nav-link2" href="https://www.cencepower.com/calculators/kwh-to-co2-calculator">Cence Power</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link2" href="https://www.omnicalculator.com/everyday-life/electricity-cost">Omni Calculator</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link2" href="https://www.mgtc.gov.my/lcos-personal-calculator/">Personal Carbon Footprint Calculator</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script>
+      document.querySelector('.btn-secondary').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('#calculators-section').scrollIntoView({ behavior: 'smooth' });
+      });
+
+      document.querySelector('#about-link').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('#about-section').scrollIntoView({ behavior: 'smooth' });
+      });
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const cards = document.querySelectorAll('.card');
+        const aboutSection = document.querySelector('#about-section');
+
+        const observerCallback = (entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('slide-in');
+              observer.unobserve(entry.target); // Stop observing once the element has slid in
+            }
+          });
+        };
+
+        const observerOptions = {
+          threshold: 0.1 // Adjust this value as needed
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        cards.forEach(card => {
+          observer.observe(card);
+        });
+
+        observer.observe(aboutSection);
+      });
+    </script>
+  </body>
+</html>

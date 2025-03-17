@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+
+{% block mainContent %}
+
+<div class="background-container">
+    <div class="text-overlay">
+        <h1 class="display-8" style="font-weight:bold;">Light Bulb Calculator</h1>
+        <p class="lead">A calculator designed to give you straight-to-the-point results.</p>
+    </div>
+</div>
+
+<form class="container-fluid" action="{{ url_for('calculate') }}" method="post">
+    <div class="row">
+        <div class="col-12 mb-3 slide-in" data-delay="0">
+            <p class="lead">Insert all information to your light bulbs here:</p>
+        </div>
+        <div class="col-12 mb-3 slide-in" data-delay="100">
+            <select id="selectCountry" class="form-control" name="Country" required>
+                <option value="" selected>Please choose a country</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="ARS">Argentina</option>
+                <option value="AUD">Australia</option>
+                <option value="BRL">Brazil</option>
+                <option value="BGN">Bulgaria</option>
+                <option value="KHR">Cambodia</option>
+                <option value="COP">Colombia</option>
+                <option value="EUR">Germany</option>
+                <option value="GBP">United Kingdom</option>
+                <option value="HKD">Hong Kong</option>
+                <option value="IDR">Indonesia</option>
+                <option value="JPY">Japan</option>
+                <option value="MMK">Myanmar</option>
+                <option value="MXN">Mexico</option>
+                <option value="NZD">New Zealand</option>
+                <option value="RUB">Russia</option>
+                <option value="SGD">Singapore</option>
+                <option value="THB">Thailand</option>
+                <option value="USD">United States</option>
+
+            </select>
+        </div>
+
+        <div class="col-12 mb-3 slide-in" data-delay="200">
+            <select id="selectBulb" class="form-control" name="Bulb" required>
+                <option value="" selected>Please choose a type of bulb</option>
+                <option value="LED">LED</option>
+                <option value="CFL">CFL</option>
+            </select>
+        </div>
+
+        <div class="col-12 mb-3 slide-in" data-delay="300">
+            <input type="number" name="applianceNumber" class="form-control" placeholder="Number of appliances used" required>
+        </div>
+
+        <div class="col-12 mb-3 slide-in" data-delay="400">
+            <input type="decimal" name="timeUsed" class="form-control" placeholder="Hours used per day" required>
+        </div>
+
+        <div class="col-12 mb-3 slide-in" data-delay="500">
+            <input type="decimal" name="power" class="form-control" placeholder="Input power of appliance (W)" required>
+        </div>
+
+        <div class="col-12 mb-3 slide-in" data-delay="600">
+            <input type="submit" value="Calculate" class="btn btn-primary" id="calculate-button"/>
+        </div>
+
+        {% if calculated %}
+        <div class="col-12 mb-2 slide-in">
+            <div class="alert {{ color }}" id="alert-box">
+                {{ note }}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    {% if calculated %}
+
+    <div class="background-container2 slide-in">
+        <div class="row mt-3">
+            <div class="col-lg-12">
+                <div class="text-left" style="font-size: 1.5rem;"> <!-- Aligns text to the left -->
+                    <h4 style="font-size: 2.5rem; font-weight: bold;">Results and Suggestions:</h4>
+                    <ul class="mb-0"> <!-- Remove default margin from the list -->
+                        {% if Country == "Malaysia" %}
+                            {% if Bulb == "LED" %}
+                            <li class="text-white mb-2 p-2" style="border-radius: .25rem;">
+                                Cost of energy consumption per month is around RM{{ result1 }} to RM{{ result2 }}
+                            </li>
+                            <li class="text-white mb-2 p-2" style="border-radius: .25rem;">
+                                Your carbon emission per month is around {{ cresult1 }} kg of CO2 each month
+                            </li>
+                            <li class="text-white mb-2 p-2" style="border-radius: .25rem;">
+                                Consider using natural light whenever possible and turn off lights in unoccupied rooms.
+                            </li>
+                            {% elif Bulb == "CFL" %}
+                            <li class="text-white mb-2 p-2" style="border-radius: .25rem;">
+                                Cost of energy consumption per month is around RM{{ result3 }} to RM{{ result4 }}
+                            </li>
+                            <li class="text-white mb-2 p-2" style="border-radius: .25rem;">
+                                You could save around RM{{ result1 }} to RM{{ result2 }} by switching to LED
+                            </li>
+                            <li class="text-white mb-2 p-2" style="border-radius: .25rem;">
+                                Your carbon emission per month is around {{ cresult2 }} kg of CO2 each month
+                            </li>
+                            <li class="text-white mb-2 p-2" style="border-radius: .25rem;">
+                                You could reduce your carbon emission by {{ cresult1 }} kg of CO2 each month by switching to LED Bulbs.
+                            </li>
+                            <li class="text-white mb-2 p-2" style="border-radius: .25rem;">
+                                Consider using natural light whenever possible and turn off lights in unoccupied rooms.
+                            </li>
+                            <li class="text-white mb-2 p-2" style="border-radius: .25rem;">
+                                Consider replacing CFL bulbs with energy-efficient LED bulbs, which use up to 75% less energy and last much longer.
+                            </li>
+                            {% else %}
+                            <li class="text-white mb-2 p-2" style="border-radius: .25rem;">
+                                Please select a bulb type
+                            </li>
+                            {% endif %}
+                        {% else %}
+                            {% if Bulb == "LED" %}
+                            <li class="text-white mb-2 p-2" style="border-radius: .25rem;">
+                                Cost of energy consumption per month is around {{ result1 }} {{Country}}
+                            </li>
+                            <li class="text-white mb-2 p-2" style="border-radius: .25rem;">
+                                Your carbon emission per month is around {{ cresult1 }} kg of CO2 each month
+                            </li>
+                            <li class="text-white mb-2 p-2" style="border-radius: .25rem;">
+                                Consider using natural light whenever possible and turn off lights in unoccupied rooms.
+                            </li>
+                            {% elif Bulb == "CFL" %}
+                            <li class="text-white mb-2 p-2" style="border-radius: .25rem;">
+                                Cost of energy consumption per month is around {{ result3 }} {{Country}}
+                            </li>
+                            <li class="text-white mb-2 p-2" style="border-radius: .25rem;">
+                                You could save around {{ result1 }} {{Country}} by switching to LED
+                            </li>
+                            <li class="text-white mb-2 p-2" style="border-radius: .25rem;">
+                                Your carbon emission per month is around {{ cresult2 }} kg of CO2 each month
+                            </li>
+                            <li class="text-white mb-2 p-2" style="border-radius: .25rem;">
+                                You could reduce your carbon emission by {{ cresult1 }} kg of CO2 each month by switching to LED Bulbs.
+                            </li>
+                            <li class="text-white mb-2 p-2" style="border-radius: .25rem;">
+                                Consider using natural light whenever possible and turn off lights in unoccupied rooms.
+                            </li>
+                            <li class="text-white mb-2 p-2" style="border-radius: .25rem;">
+                                Consider replacing CFL bulbs with energy-efficient LED bulbs, which use up to 75% less energy and last much longer.
+                            </li>
+                            {% endif %}
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% endblock %}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get all elements with the 'slide-in' class
+        const elements = document.querySelectorAll('.slide-in');
+        console.log('Found elements:', elements); // Debug line to ensure elements are found
+
+        // Loop through each element and apply the animation with delay
+        elements.forEach(element => {
+            const delay = element.getAttribute('data-delay');
+            console.log('Applying delay:', delay); // Debug line to check delay value
+            element.style.animationDelay = `${delay}ms`;
+        });
+    });
+</script>
+

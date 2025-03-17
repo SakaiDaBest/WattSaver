@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facts about LEDs and DC Appliances</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            margin-top: 20px;
+        }
+        .fact-box {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-align: center;
+            color: #343a40;
+        }
+        .back-link {
+            margin-top: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Benefits of LED over CFL -->
+        <h2 class="section-title">Benefits of LED over CFL</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="fact-box">
+                    <h5>Energy Efficiency</h5>
+                    <p>LEDs consume significantly less energy compared to CFLs, making them more cost-effective and environmentally friendly.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="fact-box">
+                    <h5>Longer Lifespan</h5>
+                    <p>LEDs have a much longer lifespan than CFLs, often lasting up to 25,000 hours or more, reducing the need for frequent replacements.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="fact-box">
+                    <h5>Instant Brightness</h5>
+                    <p>Unlike CFLs, LEDs reach full brightness immediately after being turned on, providing instant illumination without any warm-up time.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="fact-box">
+                    <h5>No Mercury Content</h5>
+                    <p>LEDs do not contain mercury, unlike CFLs, which makes them safer for the environment and easier to dispose of at the end of their life.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Use DC Appliances Over AC -->
+        <h2 class="section-title">Why Use DC Appliances Over AC Appliances</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="fact-box">
+                    <h5>Higher Efficiency</h5>
+                    <p>DC appliances are more energy-efficient, especially when used with renewable energy sources like solar panels, as they avoid conversion losses.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="fact-box">
+                    <h5>Reduced Heat Generation</h5>
+                    <p>DC appliances generate less heat compared to AC appliances, reducing cooling costs and improving safety in certain applications.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="fact-box">
+                    <h5>Direct Integration with Solar</h5>
+                    <p>DC appliances can be directly powered by solar panels without the need for an inverter, making them more suitable for off-grid systems.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="fact-box">
+                    <h5>Lower Maintenance</h5>
+                    <p>DC appliances typically have simpler designs with fewer moving parts, leading to lower maintenance requirements and longer operational life.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to Home Link -->
+        <div class="back-link">
+            <a href="{{ url_for('main') }}" class="btn btn-primary">Back to Home</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
