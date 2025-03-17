@@ -1,0 +1,129 @@
+/* CSS for changing the size and color of the text in the navbar */
+
+    /* Change the color and size of the nav links */
+    .nav-link {
+        font-size: 24px; /* Adjust the font size as needed */
+        
+        margin-left:1rem;
+        color: #d3d3d3; /* Change the color as needed */
+    }
+
+    /* Change the color of the active nav link */
+    .nav-link.active {
+        color: #f8f9fa; /* Change the color as needed */
+    }
+
+    /* Change the color of the nav links on hover */
+    .nav-link:hover {
+        color: #f8f9fa; /* Change the color as needed */
+    }
+
+    .background-container {
+        position: relative;
+        background-image: url('/static/img/lightbulb.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 350px; /* Adjust height as needed */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+        
+        text-shadow: 2px 2px 2px rgba(235, 105, 19, 0.7); /* Optional: add text shadow for better readability */
+    }
+
+    .background-container3 {
+        position: relative;
+        background-image: url('/static/img/dcappliance.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 350px; /* Adjust height as needed */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+        
+        text-shadow: 2px 2px 2px rgba(235, 105, 19, 0.7); /* Optional: add text shadow for better readability */
+    }
+
+    .background-container4 {
+        position: relative;
+        background-image: url('/static/img/acappliance.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 350px; /* Adjust height as needed */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+        
+        text-shadow: 2px 2px 2px rgba(235, 105, 19, 0.7); /* Optional: add text shadow for better readability */
+    }
+
+    .background-container2 {
+        position: relative;
+        background-image: url('/static/img/enviroment.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 500px; /* Adjust height as needed */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+       
+        text-shadow: 2px 2px 2px rgba(82, 26, 214, 0.7); /* Optional: add text shadow for better readability */
+    }
+
+    .lead {
+        font-size: 1.5rem;
+        color:rgb(157, 236, 37); /* Adjust the size as needed, e.g., 1.5rem, 20px, etc. */
+        font-weight:bold;
+    }
+
+    body {
+        background-color: #343a40;
+        color: white;
+    }
+
+    .text-overlay {
+        color:antiquewhite;
+        text-align: center;
+        padding: 20px; /* Optional: add padding to the text container */
+    }
+
+    .container, .container-fluid {
+        background-color: #343a40;
+        color: white;
+        
+    }
+
+    .form-control, .btn {
+        background-color: #343a40;
+        color: white;
+        border: 1px solid white; /* Optional: add border to form controls and button */
+    }
+
+    .alert {
+        background-color: #343a40;
+        color: white;
+        border: 1px solid white; /* Optional: add border to alert */
+        margin-bottom: 20px;
+    }
+    
+    /* Define the sliding animation */
+    @keyframes slideInFromLeft {
+        from {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    /* Apply the animation to form elements */
+    .slide-in {
+        animation: slideInFromLeft 1.0s ease-out forwards; /* Adjust duration as needed */
+        opacity: 0; /* Ensure element is initially invisible */
+    }
