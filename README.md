@@ -28,7 +28,6 @@
         <h2>🖥️ Live Demo</h2>
         <p>🔗 <a href="https://wattsaver1.pythonanywhere.com/" target="_blank">Visit Wattsaver</a></p>
         <div class="text-center">
-            <img src="screenshot.png" class="img-fluid" alt="Wattsaver Screenshot" width="600">
         </div>
     </section>
 
