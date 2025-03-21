@@ -73,14 +73,7 @@ python app.py
     </section>
 
 
-<section class="container my-5">
-        <h2 class="text-center">🚀 Future Improvements</h2>
-        <ul>
-            <li>📌 **Add a machine learning model** to predict future energy consumption</li>
-            <li>📌 **Enable real-time IoT integration** for smart meters</li>
-            <li>📌 **Develop a mobile app version** for better accessibility</li>
-        </ul>
-    </section>
+
 
 
 
