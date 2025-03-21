@@ -55,25 +55,6 @@
     </section>
 
 
-<section class="container my-5">
-        <h2 class="text-center">📦 Installation (For Local Setup)</h2>
-        <div class="bg-light p-3">
-            <pre>
-# 1️⃣ Clone the Repository
-git clone https://github.com/yourusername/wattsaver.git
-cd wattsaver
-
-# 2️⃣ Install Dependencies
-pip install -r requirements.txt
-
-# 3️⃣ Run the Flask App
-python app.py
-            </pre>
-        </div>
-    </section>
-
-
-
 
 
 
